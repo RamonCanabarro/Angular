@@ -10,7 +10,7 @@ export class HomePage {
   constructor(public platform: Platform,
     public ActionSheetController: ActionSheetController
 ){}
-openMenu(){
+openMenu(openNavDetailsPage ){
     let ActionSheet = this.ActionSheetController.create({
         title:'Menu',
         cssClass:'action-sheets-basic-page',
@@ -20,7 +20,7 @@ openMenu(){
                 role: 'destructive',
                 icon: !this.platform.is('ios') ? 'ionitron' : null,
                 handler:()=>{
-                    console.log('Artistas');
+                    return openNavDetailsPage;
                 }
             },
             {
