@@ -4,97 +4,79 @@ import { NavController, NavParams } from 'ionic-angular';
 
 
 @Component({
+  selector: 'page-artistas',
   templateUrl: 'artistas.html',
 })
-export class NavigationDetailsPage {
+export class ArtistasPage {
   item;
 
   constructor(params: NavParams) {
     this.item = params.data.item;
   }
 }
-
-@Component({
-  template: `
-<ion-header>
-  <ion-navbar>
-    <ion-title>Navigation</ion-title>
-  </ion-navbar>
-</ion-header>
-<ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="openNavDetailsPage(item)" icon-start>
-      <ion-icon [name]="'logo-' + item.icon" [ngStyle]="{'color': item.color}" item-start></ion-icon>
-      {{ item.title }}
-    </button>
-  </ion-list>
-</ion-content>
-`
-})
 export class BasicPage {
   items = [];
 
-  constructor(public nav: NavController) {
+  constructor(public nav: NavController){}
+  Artistas(item) {
+    cssClass:'lista'
     this.items = [
       {
-        'title': 'Midiã',
+        'text': 'Midiã',
         'icon': 'Contact',
         'description': 'O coração',
         'color': '#E63135'
       },
       {
-        'title': 'Orion',
+        'text': 'Orion',
         'icon': 'contact',
         'description': 'O PODEROSO',
         'color': '#0CA9EA'
       },
       {
-        'title': 'Jonathan',
+        'text': 'Jonathan',
         'icon': 'contact',
         'description': 'O Mano',
         'color': '#F46529'
       },
       {
-        'title': 'Wilson',
+        'text': 'Wilson',
         'icon': 'contact',
         'description': 'Grande Homem',
         'color': '#FFD439'
       },
       {
-        'title': 'Italo',
+        'text': 'Italo',
         'icon': 'contact',
         'description': 'Cabuloso',
         'color': '#CE6296'
       },
       {
-        'title': 'Silvio',
+        'text': 'Silvio',
         'icon': 'contact',
         'description': 'Parceiro',
         'color': '#78BD43'
       },
       {
-        'title': 'Alécio',
+        'text': 'Alécio',
         'icon': 'python',
         'description': 'Programador',
         'color': '#3575AC'
       },
       {
-        'title': 'Diego',
+        'text': 'Diego',
         'icon': 'contact',
         'description': 'Outro programador',
         'color': '#412159'
       },
       {
-        'title': 'Tux',
+        'text': 'Tux',
         'icon': 'tux',
         'description': 'The official mascot of the Linux kernel!',
         'color': '#000'
       },
     ]
-  }
-
-  openNavDetailsPage(item) {
-    this.nav.push(NavigationDetailsPage, { item: item });
-  }
+    this.nav.push(ArtistasPage, { item: item });
+  }  
 
 }
